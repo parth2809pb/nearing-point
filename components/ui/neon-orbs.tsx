@@ -11,12 +11,9 @@ export const NeonOrbs: React.FC = () => {
     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none bg-gray-50 dark:bg-nearing-black transition-colors duration-500 z-0">
       {/* Top-left orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out ${
-          mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-        }`}
+        className={`absolute transition-all duration-1000 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+          } sm:top-[-40%] sm:left-[-20%] top-[-10%] left-[-10%]`}
         style={{
-          top: "-40%",
-          left: "-20%",
           width: "80vw",
           height: "80vw",
           maxWidth: "800px",
@@ -32,13 +29,9 @@ export const NeonOrbs: React.FC = () => {
 
       {/* Bottom-center orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out delay-300 ${
-          mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+        className={`absolute transition-all duration-1000 ease-out delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          } sm:bottom-[-50%] bottom-[-20%] left-1/2 -translate-x-1/2`}
         style={{
-          bottom: "-50%",
-          left: "50%",
-          transform: "translateX(-50%)",
           width: "100vw",
           height: "100vw",
           maxWidth: "1000px",
@@ -54,12 +47,9 @@ export const NeonOrbs: React.FC = () => {
 
       {/* Top-right orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out delay-500 ${
-          mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-        }`}
+        className={`absolute transition-all duration-1000 ease-out delay-500 ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+          } sm:top-[-30%] sm:right-[-25%] top-[-10%] right-[-10%]`}
         style={{
-          top: "-30%",
-          right: "-25%",
           width: "70vw",
           height: "70vw",
           maxWidth: "700px",
@@ -75,12 +65,9 @@ export const NeonOrbs: React.FC = () => {
 
       {/* Bottom-right orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out delay-700 ${
-          mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+        className={`absolute transition-all duration-1000 ease-out delay-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          } sm:bottom-[-35%] sm:right-[-15%] bottom-[-10%] right-[-5%]`}
         style={{
-          bottom: "-35%",
-          right: "-15%",
           width: "75vw",
           height: "75vw",
           maxWidth: "750px",
@@ -97,28 +84,53 @@ export const NeonOrbs: React.FC = () => {
       <style>{`
         .beam-container {
           position: absolute;
-          inset: -2px;
+          inset: -1px; /* Tighter fit */
           border-radius: 50%;
           will-change: transform;
         }
         
         .beam-light {
           position: absolute;
-          top: 0;
-          left: 50%;
-          width: 60px;
-          height: 4px;
-          margin-left: -30px;
-          border-radius: 2px;
-          transform: translateY(-50%);
-          transition: all 0.5s;
-          background: linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.5) 30%, rgba(129, 140, 248, 0.9) 70%, rgba(99, 102, 241, 1) 100%);
-          box-shadow: 0 0 20px 4px rgba(99, 102, 241, 0.6), 0 0 40px 8px rgba(129, 140, 248, 0.3);
+          inset: 0;
+          border-radius: 50%;
+          
+          /* Create the gradient arc */
+          background: conic-gradient(
+            from 0deg,
+            transparent 0%, 
+            transparent 85%, 
+            rgba(99, 102, 241, 0.2) 90%,
+            rgba(129, 140, 248, 1) 100%
+          );
+          
+          /* Mask to create the ring shape */
+          mask: radial-gradient(
+            farthest-side,
+            transparent calc(100% - 3px),
+            black calc(100% - 3px)
+          );
+          -webkit-mask: radial-gradient(
+            farthest-side,
+            transparent calc(100% - 3px),
+            black calc(100% - 3px)
+          );
+          
+          /* Glow */
+          filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.6));
+          
+          /* Ensure rotation center is correct */
+          transform: rotate(90deg); /* Adjust start position if needed */
         }
         
         .dark .beam-light {
-          background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.5) 30%, rgba(150, 200, 255, 0.9) 70%, white 100%);
-          box-shadow: 0 0 20px 4px rgba(100, 180, 255, 0.8), 0 0 40px 8px rgba(59, 130, 246, 0.4);
+          background: conic-gradient(
+            from 0deg,
+            transparent 0%, 
+            transparent 85%, 
+            rgba(59, 130, 246, 0.2) 90%,
+            rgba(150, 200, 255, 1) 100%
+          );
+          filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.6));
         }
         
         .orb-light {

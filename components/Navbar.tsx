@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
 interface NavItem {
@@ -105,45 +106,48 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
       </div>
 
       {/* Mobile menu */}
-      {/* Mobile menu - Full Screen Overlay */}
-      <div className={`md:hidden fixed inset-0 z-40 bg-white/95 dark:bg-nearing-black/95 backdrop-blur-xl transition-all duration-500 ease-in-out transform ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}>
-
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-6 right-6 p-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
-          aria-label="Close Menu"
-        >
-          <X size={32} />
-        </button>
-
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`text-3xl font-display font-bold tracking-tight transition-colors duration-300 ${activeSection === item.id
-                ? 'text-blue-600 dark:text-blue-500'
-                : 'text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
-                }`}
-            >
-              {item.label}
-            </button>
-          ))}
-
-          <div className="w-12 h-0.5 bg-gray-200 dark:bg-white/10 my-8"></div>
+      {/* Mobile menu - Full Screen Overlay via Portal */}
+      {isOpen && createPortal(
+        <div className={`fixed inset-0 z-[100] bg-white/98 dark:bg-nearing-black/98 backdrop-blur-xl transition-all duration-500 ease-in-out flex flex-col`}>
 
           <button
-            onClick={() => {
-              toggleTheme();
-              // Don't close menu immediately so user sees the change
-            }}
-            className="flex items-center space-x-3 text-lg font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 p-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors z-50"
+            aria-label="Close Menu"
           >
-            {darkMode ? <Sun size={24} /> : <Moon size={24} />}
-            <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+            <X size={32} />
           </button>
-        </div>
-      </div>
+
+          <div className="flex flex-col items-center justify-center h-full space-y-8 animate-fade-in-up">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-3xl font-display font-bold tracking-tight transition-colors duration-300 ${activeSection === item.id
+                    ? 'text-blue-600 dark:text-blue-500'
+                    : 'text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
+                  }`}
+              >
+                {item.label}
+              </button>
+            ))}
+
+            <div className="w-12 h-0.5 bg-gray-200 dark:bg-white/10 my-8"></div>
+
+            <button
+              onClick={() => {
+                toggleTheme();
+                // Don't close menu immediately so user sees the change
+              }}
+              className="flex items-center space-x-3 text-lg font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
+            >
+              {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+              <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+            </button>
+          </div>
+        </div>,
+        document.body
+      )}
     </nav>
   );
 };
