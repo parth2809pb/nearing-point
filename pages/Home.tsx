@@ -18,6 +18,8 @@ const Home: React.FC = () => {
   const companyTickers = [
     'OPENAI', 'ANTHROPIC', 'DATABRICKS', 'GROQ', 'CRUSOE', 'KRAKEN', 'RIPPLE', 'PERPLEXITY',
     'OPENAI', 'ANTHROPIC', 'DATABRICKS', 'GROQ', 'CRUSOE', 'KRAKEN', 'RIPPLE', 'PERPLEXITY',
+    'OPENAI', 'ANTHROPIC', 'DATABRICKS', 'GROQ', 'CRUSOE', 'KRAKEN', 'RIPPLE', 'PERPLEXITY',
+    'OPENAI', 'ANTHROPIC', 'DATABRICKS', 'GROQ', 'CRUSOE', 'KRAKEN', 'RIPPLE', 'PERPLEXITY',
   ];
 
   const teamMembers: TeamMember[] = [
