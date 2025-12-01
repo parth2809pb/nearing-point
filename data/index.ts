@@ -72,14 +72,14 @@ export const portfolioData: PortfolioItem[] = [
         name: 'Groq',
         description: 'Creator of the LPU™ Inference Engine, delivering the fastest AI inference speeds.',
         category: 'Compute',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Groq_Logo.svg',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Groq_logo.svg',
         longDescription: 'Groq has re-architected the processor for the age of AI. Their Language Processing Unit (LPU) delivers deterministic performance and ultra-low latency, unlocking real-time AI use cases that are impossible with traditional GPUs.'
     },
     {
         name: 'Crusoe',
         description: 'Pioneers of climate-aligned digital infrastructure and clean computing power.',
         category: 'Infrastructure',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Crusoe_Energy_Systems_Logo.jpg/640px-Crusoe_Energy_Systems_Logo.jpg',
+        logo: 'https://logo.clearbit.com/crusoeenergy.com',
         longDescription: 'Crusoe Energy taps into stranded energy assets (like flared gas) to power data centers. This unique model provides low-cost, carbon-negative compute, addressing the critical energy bottleneck facing the AI industry.'
     },
     {
