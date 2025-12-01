@@ -5,6 +5,9 @@ import saurabhImg from '../assets/Saurabh Khadelwal.jpeg';
 import blogComputeImg from '../assets/blog_compute.png';
 import blogLiquidityImg from '../assets/blog_liquidity.png';
 import blogEnergyImg from '../assets/blog_energy.png';
+import groqImg from '../assets/groq.png';
+import crusoeImg from '../assets/crusoe.png';
+import krakenImg from '../assets/kraken.png';
 
 export const teamMembers: TeamMember[] = [
     {
@@ -72,21 +75,21 @@ export const portfolioData: PortfolioItem[] = [
         name: 'Groq',
         description: 'Creator of the LPU™ Inference Engine, delivering the fastest AI inference speeds.',
         category: 'Compute',
-        logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Groq_logo.svg',
+        logo: groqImg,
         longDescription: 'Groq has re-architected the processor for the age of AI. Their Language Processing Unit (LPU) delivers deterministic performance and ultra-low latency, unlocking real-time AI use cases that are impossible with traditional GPUs.'
     },
     {
         name: 'Crusoe',
         description: 'Pioneers of climate-aligned digital infrastructure and clean computing power.',
         category: 'Infrastructure',
-        logo: 'https://logo.clearbit.com/crusoeenergy.com',
+        logo: crusoeImg,
         longDescription: 'Crusoe Energy taps into stranded energy assets (like flared gas) to power data centers. This unique model provides low-cost, carbon-negative compute, addressing the critical energy bottleneck facing the AI industry.'
     },
     {
         name: 'Kraken',
         description: 'One of the world’s largest and most secure digital asset exchanges.',
         category: 'FinTech',
-        logo: 'https://cdn.simpleicons.org/kraken'
+        logo: krakenImg
     },
     {
         name: 'Ripple',
