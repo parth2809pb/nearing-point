@@ -4,6 +4,8 @@ export interface PortfolioItem {
   category: 'AI' | 'Infrastructure' | 'FinTech' | 'Compute';
   logo?: string;
   icon?: any;
+  featured?: boolean;
+  longDescription?: string;
 }
 
 export interface TeamMember {
@@ -12,6 +14,8 @@ export interface TeamMember {
   bio: string;
   image: string;
   linkedin?: string;
+  longBio?: string;
+  focusAreas?: string[];
 }
 
 export interface NavItem {

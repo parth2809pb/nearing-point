@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 interface NavItem {
   label: string;
-  id: string;
+  path: string;
 }
 
 const navItems: NavItem[] = [
-  { label: 'Home', id: 'home' },
-  { label: 'About', id: 'about' },
-  { label: 'Portfolio', id: 'portfolio' },
-  { label: 'Team', id: 'team' },
-  { label: 'Contact', id: 'contact' },
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/thesis' },
+  { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Team', path: '/team' },
+  { label: 'Insights', path: '/insights' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 interface NavbarProps {
@@ -23,66 +25,50 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-
-      // Determine active section
-      const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        if (section && section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-          setActiveSection(section.id);
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    setIsOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80, // Offset for navbar
-        behavior: 'smooth'
-      });
-    }
-  };
-
   // Determine nav styles based on scroll and theme
   const navBackground = scrolled
     ? 'bg-white/90 dark:bg-nearing-black/90 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-white/10'
     : 'bg-transparent border-b border-transparent';
 
+  const isActive = (path: string) => {
+    if (path === '/' && location.pathname !== '/') return false;
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${navBackground}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => scrollToSection('home')}>
+          <Link to="/" className="flex-shrink-0 cursor-pointer">
             <span className="font-display font-bold text-2xl tracking-tighter text-gray-900 dark:text-white transition-colors">
               NEARING<span className="text-blue-600 dark:text-blue-500">POINT</span>
             </span>
-          </div>
+          </Link>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-center space-x-8">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${activeSection === item.id
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${isActive(item.path)
                     ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-white/5'
                     : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'
                     }`}
                 >
                   {item.label}
-                </button>
+                </Link>
               ))}
               <button
                 onClick={toggleTheme}
@@ -105,7 +91,6 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {/* Mobile menu - Full Screen Overlay via Portal */}
       {isOpen && createPortal(
         <div className={`fixed inset-0 z-[100] bg-white/98 dark:bg-nearing-black/98 backdrop-blur-xl transition-all duration-500 ease-in-out flex flex-col`}>
@@ -120,16 +105,17 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
           <div className="flex flex-col items-center justify-center h-full space-y-8 animate-fade-in-up">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-3xl font-display font-bold tracking-tight transition-colors duration-300 ${activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-500'
-                    : 'text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-3xl font-display font-bold tracking-tight transition-colors duration-300 ${isActive(item.path)
+                  ? 'text-blue-600 dark:text-blue-500'
+                  : 'text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
                   }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
 
             <div className="w-12 h-0.5 bg-gray-200 dark:bg-white/10 my-8"></div>
@@ -137,7 +123,6 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
             <button
               onClick={() => {
                 toggleTheme();
-                // Don't close menu immediately so user sees the change
               }}
               className="flex items-center space-x-3 text-lg font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-white transition-colors"
             >
