@@ -40,7 +40,7 @@ export const portfolioData: PortfolioItem[] = [
         name: 'Databricks',
         description: 'Unified data analytics platform for massive scale data engineering and data science.',
         category: 'Infrastructure',
-        logo: 'https://logo.clearbit.com/databricks.com',
+        logo: 'https://cdn.simpleicons.org/databricks',
         featured: true,
         longDescription: 'Databricks is the pioneer of the Lakehouse architecture, unifying data warehousing and AI. As enterprises race to build proprietary models, Databricks provides the essential infrastructure to manage, govern, and process the massive datasets required for training and fine-tuning.'
     },
@@ -56,7 +56,7 @@ export const portfolioData: PortfolioItem[] = [
         name: 'OpenAI',
         description: 'AI research and deployment company dedicated to ensuring AGI benefits all of humanity.',
         category: 'AI',
-        logo: 'https://logo.clearbit.com/openai.com',
+        logo: 'https://cdn.simpleicons.org/openai',
         featured: true,
         longDescription: 'The creator of GPT-4 and ChatGPT, OpenAI is the defining company of the generative AI era. Their foundation models serve as the intelligence layer for thousands of applications, creating a new platform shift comparable to the internet itself.'
     },
@@ -64,7 +64,7 @@ export const portfolioData: PortfolioItem[] = [
         name: 'Anthropic',
         description: 'AI safety and research company building reliable, interpretable, and steerable AI systems.',
         category: 'AI',
-        logo: 'https://logo.clearbit.com/anthropic.com',
+        logo: 'https://cdn.simpleicons.org/anthropic',
         featured: true,
         longDescription: 'Anthropic focuses on AI safety and steerability. Their Claude models offer a compelling alternative for enterprises requiring high-context windows and rigorous safety guardrails, making them a critical player in the foundation model landscape.'
     },
@@ -72,27 +72,27 @@ export const portfolioData: PortfolioItem[] = [
         name: 'Groq',
         description: 'Creator of the LPU™ Inference Engine, delivering the fastest AI inference speeds.',
         category: 'Compute',
-        logo: 'https://logo.clearbit.com/groq.com',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Groq_Logo.svg',
         longDescription: 'Groq has re-architected the processor for the age of AI. Their Language Processing Unit (LPU) delivers deterministic performance and ultra-low latency, unlocking real-time AI use cases that are impossible with traditional GPUs.'
     },
     {
         name: 'Crusoe',
         description: 'Pioneers of climate-aligned digital infrastructure and clean computing power.',
         category: 'Infrastructure',
-        logo: 'https://logo.clearbit.com/crusoeenergy.com',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Crusoe_Energy_Systems_Logo.jpg/640px-Crusoe_Energy_Systems_Logo.jpg',
         longDescription: 'Crusoe Energy taps into stranded energy assets (like flared gas) to power data centers. This unique model provides low-cost, carbon-negative compute, addressing the critical energy bottleneck facing the AI industry.'
     },
     {
         name: 'Kraken',
         description: 'One of the world’s largest and most secure digital asset exchanges.',
         category: 'FinTech',
-        logo: 'https://logo.clearbit.com/kraken.com'
+        logo: 'https://cdn.simpleicons.org/kraken'
     },
     {
         name: 'Ripple',
         description: 'Real-time gross settlement system, currency exchange and remittance network.',
         category: 'FinTech',
-        logo: 'https://logo.clearbit.com/ripple.com'
+        logo: 'https://cdn.simpleicons.org/ripple'
     },
 ];
 
