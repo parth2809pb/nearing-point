@@ -57,10 +57,10 @@ export const PortfolioSection: React.FC = () => {
                                     </p>
                                 </div>
 
-                                <div className="relative z-10 pt-6 border-t border-gray-100 dark:border-white/5 flex items-center text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                <Link to="/portfolio" className="relative z-10 pt-6 border-t border-gray-100 dark:border-white/5 flex items-center text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                     <span className="mr-2">Investment Thesis</span>
                                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                                </div>
+                                </Link>
                             </div>
                         </Reveal>
                     ))}

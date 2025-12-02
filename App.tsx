@@ -8,6 +8,9 @@ import Team from './pages/Team';
 import Portfolio from './pages/Portfolio';
 import Insights from './pages/Insights';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
+import Disclosure from './pages/Disclosure';
 
 const App: React.FC = () => {
   // Default to Dark Mode (true)
@@ -37,6 +40,9 @@ const App: React.FC = () => {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/insights" element={<Insights />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/disclosure" element={<Disclosure />} />
           </Routes>
         </main>
         <Footer />

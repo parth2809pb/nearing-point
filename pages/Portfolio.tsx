@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 import { portfolioData } from '../data';
 import { ArrowRight, Search, X, ExternalLink } from 'lucide-react';
@@ -160,10 +161,10 @@ const Portfolio: React.FC = () => {
               How our portfolio companies OpenAI, Anthropic, and Perplexity are collectively dismantling the barriers to artificial general intelligence.
             </p>
             <div className="flex justify-center">
-              <button className="inline-flex items-center px-8 py-4 bg-white text-blue-900 font-bold rounded-full hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl">
-                Read the Report
+              <Link to="/contact" className="inline-flex items-center px-8 py-4 bg-white text-blue-900 font-bold rounded-full hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl">
+                Get in Touch
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
+              </Link>
             </div>
           </Reveal>
         </div>

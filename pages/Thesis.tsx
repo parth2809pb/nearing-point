@@ -162,10 +162,10 @@ const Thesis: React.FC = () => {
                         <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-8">See how this thesis translates to action.</h2>
                         <div className="flex justify-center">
                             <Link
-                                to="/portfolio"
+                                to="/contact"
                                 className="inline-flex items-center px-8 py-4 bg-white text-blue-900 font-bold rounded-full hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
                             >
-                                View Our Portfolio
+                                Get in Touch
                                 <ArrowRight className="ml-2 w-5 h-5" />
                             </Link>
                         </div>
