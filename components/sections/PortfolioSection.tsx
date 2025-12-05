@@ -34,14 +34,14 @@ export const PortfolioSection: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {portfolioData.map((company, index) => (
                         <Reveal key={company.name} delay={index * 100}>
-                            <div className="group relative bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 p-8 h-full min-h-[320px] flex flex-col justify-between hover:border-blue-500/30 dark:hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden rounded-sm">
+                            <div className="group relative bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 p-8 h-full min-h-[320px] flex flex-col justify-between hover:border-blue-500/30 dark:hover:border-blue-500/50 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:shadow-2xl hover:-translate-y-2 overflow-hidden rounded-sm">
 
                                 {/* Hover Gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-transparent dark:from-blue-900/10 dark:via-transparent dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                                 <div className="relative z-10">
                                     <div className="flex justify-between items-start mb-8">
-                                        <div className="h-16 w-16 bg-white dark:bg-white/10 rounded-lg p-3 flex items-center justify-center border border-gray-100 dark:border-white/5 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                                        <div className="h-16 w-16 bg-white dark:bg-white/10 rounded-lg p-3 flex items-center justify-center border border-gray-100 dark:border-white/5 shadow-sm group-hover:scale-110 transition-transform duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)]">
                                             <img src={company.logo} alt={company.name} className="max-w-full max-h-full object-contain" />
                                         </div>
                                         <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

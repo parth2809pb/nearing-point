@@ -11,7 +11,7 @@ export const NeonOrbs: React.FC = () => {
     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none bg-gray-50 dark:bg-nearing-black transition-colors duration-500 z-0">
       {/* Top-left orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+        className={`absolute transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${mounted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
           } sm:top-[-40%] sm:left-[-20%] top-[-10%] left-[-10%]`}
         style={{
           width: "80vw",
@@ -29,7 +29,7 @@ export const NeonOrbs: React.FC = () => {
 
       {/* Bottom-center orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        className={`absolute transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)] delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           } sm:bottom-[-50%] bottom-[-20%] left-1/2 -translate-x-1/2`}
         style={{
           width: "100vw",
@@ -47,7 +47,7 @@ export const NeonOrbs: React.FC = () => {
 
       {/* Top-right orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out delay-500 ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+        className={`absolute transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)] delay-500 ${mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           } sm:top-[-30%] sm:right-[-25%] top-[-10%] right-[-10%]`}
         style={{
           width: "70vw",
@@ -65,7 +65,7 @@ export const NeonOrbs: React.FC = () => {
 
       {/* Bottom-right orb */}
       <div
-        className={`absolute transition-all duration-1000 ease-out delay-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        className={`absolute transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)] delay-700 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           } sm:bottom-[-35%] sm:right-[-15%] bottom-[-10%] right-[-5%]`}
         style={{
           width: "75vw",

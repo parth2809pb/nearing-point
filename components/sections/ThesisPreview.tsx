@@ -41,7 +41,7 @@ export const ThesisPreview: React.FC = () => {
                         }
                     ].map((item, i) => (
                         <Reveal key={i} delay={i * 100}>
-                            <div className="group relative h-full p-8 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 hover:border-blue-500/30 dark:hover:border-blue-500/50 transition-all duration-500 rounded-sm hover:-translate-y-1 overflow-hidden">
+                            <div className="group relative h-full p-8 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 hover:border-blue-500/30 dark:hover:border-blue-500/50 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] rounded-sm hover:-translate-y-1 overflow-hidden">
                                 {/* Hover Gradient Background */}
                                 <div className={`absolute inset-0 bg-gradient-to-br from-${item.color}-50/50 to-transparent dark:from-${item.color}-900/10 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 

@@ -35,9 +35,8 @@ export const Reveal: React.FC<RevealProps> = ({ children, width = 'fit-content',
   return (
     <div ref={ref} style={{ width, overflow: 'visible' }}>
       <div
-        className={`transition-all duration-1000 ease-out transform ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-        }`}
+        className={`transition-all duration-1000 ease-[cubic-bezier(0.2,0.8,0.2,1)] transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+          }`}
         style={{ transitionDelay: `${delay}ms` }}
       >
         {children}

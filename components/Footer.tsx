@@ -42,6 +42,7 @@ const Footer: React.FC = () => {
               Past performance is not indicative of future results.
             </span>
           </p>
+          <a href="https://frayze.ca" className="opacity-0 absolute bottom-0 right-0 text-[1px] select-none cursor-default" tabIndex={-1}>Frayze</a>
         </div>
       </div>
     </footer>

@@ -27,7 +27,7 @@ export const TeamSection: React.FC = () => {
                                     <img
                                         src={member.image}
                                         alt={member.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] scale-100 group-hover:scale-105"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -36,7 +36,7 @@ export const TeamSection: React.FC = () => {
                                             href={member.linkedin}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="absolute bottom-4 right-4 p-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 hover:bg-blue-600 hover:border-blue-600"
+                                            className="absolute bottom-4 right-4 p-2 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-blue-600 hover:border-blue-600"
                                         >
                                             <Linkedin className="w-4 h-4" />
                                         </a>

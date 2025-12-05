@@ -28,7 +28,7 @@ export const InsightsSection: React.FC = () => {
                         <Reveal key={idx} delay={idx * 100}>
                             <a href={post.link} className="group flex flex-col h-full">
                                 <div className="relative aspect-[16/9] mb-6 overflow-hidden rounded-sm bg-gray-200 dark:bg-white/5">
-                                    <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                    <img src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105" />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
                                 </div>
 
